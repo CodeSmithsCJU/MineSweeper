@@ -6,7 +6,10 @@ print("홀짝게임 시작 1, 2중 선택")
 
 while n < len(lst):
     r = random.randrange(1,3)
-    ran = int(input("숫자 입력: "))
+    try:
+        ran = int(input("숫자 입력: "))
+    except:
+        print("숫자만")
     if ran == r:
         print(lst[n], "is babo")
     else:
