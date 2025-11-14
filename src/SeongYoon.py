@@ -31,4 +31,4 @@ def showLinearGraph(*args):
     drawGraphBoard()
 
 
-showLinearGraph(5)
+showLinearGraph(1,1,1) 
