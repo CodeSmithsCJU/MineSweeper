@@ -1,5 +1,7 @@
 #mine = -1
 #flag = -2
+#b1 = 답지
+#b2 = 문제지
 #답지는 폭탄 -1과 숫자로 써져있는 완성된 배열
 #풀이는 연산 시행 부분 대조한 뒤 가져오기
 def leftclick():
@@ -7,24 +9,22 @@ def leftclick():
         #낫띵해쁜드
         return
     if(b_close[x][y] == True):
-        if():
+        if(1 <= b1[x][y] <= 8):
+            #답지 칸 번호 불러오기
             return
-        if():
+        if(b1[x][y] == -2):
+            # 깃발 없애고 판단 시작?
             return
-        if():
+        if(b1[x][y] == 0):
+            #재귀저기연산 시작
             return
-        if():
+        if(b1[x][y] == -1):
+            #calling gameover 
             return
-        if():
-            return
-        #재귀저기연산 시작
-        return
-    if(b[x][y] == -1):
-        #calling gameover 
         return
     
 def rightclick():
-    if(b[x][y]==nonclick):
+    if(b[x][y]==b_close):
         #깃발 이미지로 변경
         return
     if(b[x][y] == -2):
