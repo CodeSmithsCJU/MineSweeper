@@ -1,4 +1,5 @@
 import tkinter as tk
+import tkinter.font
 
 #Tk객체 생성
 window = tk.Tk()
@@ -36,8 +37,18 @@ board_inner.place(x=10,y=10,width=840,height=630)
 mid_padding = tk.Frame(center_panel,width=20,bg="yellow")
 mid_padding.pack(side="left",fill="y")
 
-right_panel = tk.Frame(center_panel,width=360,height=645,bg="gray")
+right_panel = tk.Frame(center_panel,width=360,height=645,bg="white")
 right_panel.pack(side="left",anchor="nw")
+right_panel.pack_propagate(False)
+
+right_panel_title = tk.Label(right_panel,text="지뢰 찾기", font=("Arial",30,"bold"),anchor="center")
+right_panel_title.pack(side="top", fill="x", pady=10)
+
+time_left = tk.Label(right_panel,text="00:00",font=("Arial",50,"bold"),anchor="center")
+time_left.pack(side="top",fill="x")
+
+left_mine = tk.Label(right_panel,text="남은 지뢰 : 5개",font=("Arial",25,"bold"),anchor="center")
+left_mine.pack(side="top",fill="x")
 
 #BUTTON
 COL = 20
@@ -46,7 +57,7 @@ ROW = 15
 
 #버튼 클릭 시 호출
 def clickButton(i,j):
-    print(i,j)
+    return i,j
 
 #버튼 생성
 nullImg = tk.PhotoImage(width=36,height=36)
