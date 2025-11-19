@@ -2,13 +2,15 @@
 #flag = -2
 #b1 = 답지
 #b2 = 문제지
+#열지 않은칸 -3
+b2 = [[-3 for _ in range(20)] for _ in range(15)]
 # col = j row = i
 
 arr = [(-1, -1), (-1, 0), (-1, 1),( 0, -1), ( 0, 1),( 1, -1), ( 1, 0), ( 1, 1)]
 #답지는 폭탄 -1과 숫자로 써져있는 완성된 배열
 #풀이는 연산 시행 부분 대조한 뒤 가져오기
 def leftclick(j,i):
-    if b2[j][i] != NaN:  #낫띵해쁜드
+    if b2[j][i] != -3:  #낫띵해쁜드
         return
     
     else:
@@ -28,7 +30,7 @@ def leftclick(j,i):
 
 def repeat(j,i): #좌클했는데 0일경우
     try:
-        if b2[j][i] != NaN: #만약 열려있는 칸이라면 건너뜀
+        if b2[j][i] != -3: #만약 열려있는 칸이라면 건너뜀
             return
         
         b2[j][i] = b1[j][i] #닫혀있는 칸을 열어줌
@@ -46,24 +48,13 @@ def repeat(j,i): #좌클했는데 0일경우
     return
 
 def rightclick(): #우클
-    if b2[j][i] == NaN:
+    if b2[j][i] == -3:
         b2[j][i] = -2
         #깃발 이미지로 변경
         return
     if b2[j][i] == -2:
-        b2[j][i] == NaN
+        b2[j][i] = -3
         #칸 기본 이미지로 변경
         return
 
 
-
-
-clear = 0
-while clear == 0:
-    clickButton
-
-
-if clear == 1:
-    print("성공")
-else:
-    print("유감")
