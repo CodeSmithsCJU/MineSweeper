@@ -43,15 +43,25 @@ right_panel.pack(side="left",anchor="nw")
 COL = 20
 ROW = 15
 
+
+#버튼 클릭 시 호출
+def clickButton(i,j):
+    print(i,j)
+
+#버튼 생성
 nullImg = tk.PhotoImage(width=36,height=36)
 buttons = []
 for i in range(ROW):
     row = []
     for j in range(COL):
-        button = tk.Button(board_inner, image=nullImg)
+        button = tk.Button(
+            board_inner,
+            image=nullImg,
+            command=lambda i=i, j=j: clickButton(i,j))
         button.grid(row=i,column=j)
         row.append(button)
     buttons.append(row)
+
 
 #윈도우 지속시키기
 window.mainloop()
