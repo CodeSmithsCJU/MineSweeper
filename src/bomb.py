@@ -28,7 +28,7 @@ qua2 = [bomb_list[:7 , :10]]
 
 qua3 = [bomb_list[7: , :10]]
 
-qua4 = [bomb_list[7: , 10:20]]
+qua4 = [bomb_list[7: , 10:20]] 
 
 bn = 50 #폭탄의 개수는 50개
 
