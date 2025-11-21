@@ -1,11 +1,22 @@
 import tkinter as tk
 from tkinter import *
+import os 
+
 
 # 메인 윈도우 생성
 window = tk.Tk()
 window.title("MineSweeper")
 window.geometry("1280x690+200+200")
 window.resizable(False, False)
+
+
+#절대 경로
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMG_PATH = os.path.join(BASE_DIR, "resources", "normal.png")
+flag_Path = os.path.join(BASE_DIR, "resources", "flag.png")
+nullImg = tk.PhotoImage(file=IMG_PATH)
+flagImg = tk.PhotoImage(file=flag_Path)
 
 # 메인 배경색 (그라데이션 느낌을 위해 약한 연보라색)
 MAIN_BG = "#d7d6f5"    # 연한 퍼플+블루톤
@@ -81,8 +92,6 @@ def RightClick(i,j,event):
     btn = buttons[i][j]
     setFlag(i,j)
 
-nullImg = PhotoImage(file = "src/resources/normal.png")
-flagImg = PhotoImage(file = "src/resources/flag.png")
 window.tk.call('tk','scaling',1.0)
 buttons = []
 for i in range(ROW):
