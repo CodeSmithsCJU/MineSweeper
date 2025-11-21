@@ -14,6 +14,8 @@ def leftclick(i,j):
     global clear, b1, b2
     if b2[i][j] != -3:  #낫띵해쁜드
         return
+    if b2[i][j] == -2: #만약 깃발 칸이라면 건너뜀
+        return
     
     else:
         if 1 <= b1[i][j] and b1[i][j] <= 8:#답지 칸 번호 배열 불러오기
