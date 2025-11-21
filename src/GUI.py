@@ -82,6 +82,7 @@ def clickButton(i, j):
 
 
 nullImg = PhotoImage(file = "src/resources/normal.png")
+flagImg = PhotoImage(file = "src/resources/flag.png")
 window.tk.call('tk','scaling',1.0)
 buttons = []
 for i in range(ROW):
