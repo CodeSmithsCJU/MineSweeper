@@ -77,9 +77,9 @@ left_mine.pack(side="top", fill="x")
 COL = 20
 ROW = 15
 
-def clickButton(i, j):
-    print(i, j)
-
+def RightClick(i,j,event):
+    btn = buttons[i][j]
+    setFlag(i,j)
 
 nullImg = PhotoImage(file = "src/resources/normal.png")
 flagImg = PhotoImage(file = "src/resources/flag.png")
@@ -94,9 +94,24 @@ for i in range(ROW):
             borderwidth=1,
             command=lambda i=i, j=j: clickButton(i, j)
         )
+        button.state="normal"
+        button.bind("<Button-3>",lambda e, i=i, j=j: RightClick(i,j,e))
         button.grid(row=i, column=j)
         row.append(button)
     buttons.append(row)
+
+def clickButton(i, j):
+    print(i, j)
+
+
+def setFlag(i,j):
+    btn = buttons[i][j]
+    if btn.state == "normal":
+        btn.config(image=flagImg)
+        btn.state = "flag"
+    elif btn.state == "flag":
+        btn.config(image=nullImg)
+        btn.state = "normal" 
 
 # 메뉴 바
 def exitGame():
