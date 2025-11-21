@@ -11,7 +11,7 @@ arr = [(-1, -1), (-1, 0), (-1, 1),( 0, -1), ( 0, 1),( 1, -1), ( 1, 0), ( 1, 1)]
 #답지는 폭탄 -1과 숫자로 써져있는 완성된 배열
 #풀이는 연산 시행 부분 대조한 뒤 가져오기
 def leftclick(i,j):
-    global clear
+    global clear, b1, b2
     if b2[i][j] != -3:  #낫띵해쁜드
         return
     
@@ -28,6 +28,7 @@ def leftclick(i,j):
         return
 
 def repeat(i,j): #좌클했는데 0일경우
+    global b1, b2
     try:
         if b2[i][j] != -3: #만약 열려있는 칸이라면 건너뜀
             return
@@ -47,6 +48,7 @@ def repeat(i,j): #좌클했는데 0일경우
     return
 
 def rightclick(i,j): #우클
+    global b2
     if b2[i][j] == -3:
         b2[i][j] = -2
         #깃발 이미지로 변경
