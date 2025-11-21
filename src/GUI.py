@@ -81,8 +81,8 @@ def clickButton(i, j):
     print(i, j)
 
 
-nullImg = tk.PhotoImage(width=36, height=36)
-
+nullImg = PhotoImage(file = "src/resources/normal.png")
+window.tk.call('tk','scaling',1.0)
 buttons = []
 for i in range(ROW):
     row = []
